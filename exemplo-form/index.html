@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo de formulario </title>
+</html>
+
+<body>
+    <header>
+        <h3> formulario e Inputs</h3>
+    </header>
+    <main>
+            <form id="registerForm" method="POST">
+                <label for="nome"> Nome Completo</label>
+                <input type="text" id="nome" name="nome" required />
+                <br>
+                <label for="email"> Endereço de e-mail</label>
+                <input type="email" id="email" name="email" />
+                <br>
+                <label for="senha"> informe sua Senha</label>
+                <input type="password" id="password" name="senha" required />
+                <br>
+                <label for="mensagem">informe sua  mensagem:</label>
+                <textarea id="mensagem" name="mensagem" rows="4" cols="30"></textarea>
+                <br>
+                <label for="evento">Selecione o evento escolhido:</label>
+                <select id="evento" name="evento">
+                    <option value="rock">show de rock</option>
+                    <option value="modao">show de sertanejo</option>
+                    <option value="teatro">teatro: Comédia</option>
+                </select>
+                <br>
+                <!-- Input checkbox -> Opção de multipla escolha:  -->
+                <label for="termos" >
+                    <input type="checkbox" id="termos" name="termos" required>
+                    aceito os termos de uso
+                </label>
+                <br>
+                <input type="date"/>
+                <br>
+                <input type="file"/>
+                <br>
+                <!-- iput type radio - escolha unica -->
+                <label><input type="radio" name="pagamento" value="pix"> pix </label>
+                <label><input type="radio" name="pagamento" value="cartao"> cartao</label>
+                <br>
+                <input 
+                type="text"
+                id="cpf"
+                name="cpf"
+                placeholder="000.000.000-00"
+                required
+                pattern="\d{3}\.\d{3}\.\d{3}-\{2}"
+                title="Formato esperado: 000.000.000-00"
+                />
+                <br>
+                <input type="submit" value="Cadastrar" />
+                <button type="button" onclick="">cancelar</button>
+                
+
+                
+  
+            </form>
+    </main>
+    <footer>
+        <p>Desenvolvido por LUIS</p>
+    </footer>
+
+    <script>
+        document.getElementById('registerForm').addEventListener('submit', function(event)
+        {
+            event.preventDefault(); // impede o comportamento padrão do formulario (recaregando)
+            const nome = document.getElementById('nome').value;
+            alert('ola,'+ nome+' cadastro enviado com sucesso');
+        })
+    </script>
+</body>
+
+</html>
